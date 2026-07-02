@@ -1,0 +1,11 @@
+import type { Metadata } from "next";
+import { Redirect } from "@/components/Redirect";
+
+export const metadata: Metadata = {
+  robots: "noindex, follow",
+  other: { "http-equiv": "refresh", content: "0;url=https://easycla.lfx.linuxfoundation.org/" },
+};
+
+export default function EasyClaRedirect() {
+  return <Redirect to="https://easycla.lfx.linuxfoundation.org/" />;
+}
