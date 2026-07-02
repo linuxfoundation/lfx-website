@@ -1,3 +1,6 @@
+// Copyright The Linux Foundation and each contributor to LFX.
+// SPDX-License-Identifier: MIT
+
 import { Hero } from "@/components/sections/Hero";
 import { WhatIsLfx } from "@/components/sections/WhatIsLfx";
 import { Traction } from "@/components/sections/Traction";

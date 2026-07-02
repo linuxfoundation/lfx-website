@@ -1,3 +1,6 @@
+// Copyright The Linux Foundation and each contributor to LFX.
+// SPDX-License-Identifier: MIT
+
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { ToolsDropdown } from "./ToolsDropdown";

@@ -1,3 +1,6 @@
+// Copyright The Linux Foundation and each contributor to LFX.
+// SPDX-License-Identifier: MIT
+
 import { Card } from "./Card";
 
 export function MetricCard({ value, label }: { value: string; label: string }) {

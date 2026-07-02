@@ -1,3 +1,6 @@
+// Copyright The Linux Foundation and each contributor to LFX.
+// SPDX-License-Identifier: MIT
+
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 
