@@ -1,0 +1,90 @@
+/*
+ * Copyright The Linux Foundation and each contributor to LFX.
+ * SPDX-License-Identifier: MIT
+ */
+
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-brand-900: #000816;
+  --color-brand-800: #002648;
+  --color-brand-700: #004880;
+  --color-brand-600: #006DBE;
+  --color-brand-500: #0094FF;
+  --color-brand-400: #54ABFF;
+  --color-brand-300: #83C1FF;
+  --color-brand-200: #ADD6FF;
+  --color-brand-100: #D6EBFF;
+  --color-brand-50: #EBF5FF;
+
+  /* Neutral colors */
+  --color-neutral-900: #0F172A;
+  --color-neutral-800: #1E293B;
+  --color-neutral-700: #334155;
+  --color-neutral-600: #475569;
+  --color-neutral-500: #64748B;
+  --color-neutral-400: #94A3B8;
+  --color-neutral-300: #CBD5E1;
+  --color-neutral-200: #E2E8F0;
+  --color-neutral-100: #F1F5F9;
+  --color-neutral-50: #F8FAFC;
+
+  /* Positive */
+  --color-positive-700: #047857;
+  --color-positive-500: #10B981;
+  --color-positive-50: #ECFDF5;
+
+  /* Negative */
+  --color-negative-700: #B91C1C;
+  --color-negative-500: #EF4444;
+  --color-negative-50: #FEF2F2;
+
+  /* Warning */
+  --color-warning-700: #B45309;
+  --color-warning-500: #F59E0B;
+  --color-warning-50: #FFFBEB;
+
+  /* Fonts */
+  --font-heading: "Roboto Slab", serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-neutral-900);
+  background-color: #F9FAFB;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Accordion auto-advance progress bar (WhatIsLfx). The animation's end event
+   drives the rotation, so disabling it here also stops the auto-advance. */
+@keyframes accordion-progress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.accordion-progress {
+  animation: accordion-progress 5s linear forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion-progress {
+    animation: none;
+    display: none;
+  }
+}

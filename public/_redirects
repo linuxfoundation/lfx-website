@@ -1,0 +1,13 @@
+# Forced (!) so the edge 301 wins over the statically exported fallback pages,
+# which only redirect via client-side JS. Trailing slashes match the canonical
+# URLs produced by trailingSlash: true in next.config.ts.
+/developers/ / 301!
+/lfx-for-project-leads/ / 301!
+/lfx-for-ospo/ / 301!
+/tools/organization-dashboard/ https://myorg.lfx.dev/ 301!
+/tools/individual-dashboard/ https://openprofile.dev/ 301!
+/tools/pcc/ https://projectadmin.lfx.linuxfoundation.org/ 301!
+/tools/security/ https://insights.linuxfoundation.org/ 301!
+/tools/easycla/ https://easycla.lfx.linuxfoundation.org/ 301!
+/tools/mentorship/ https://mentorship.lfx.linuxfoundation.org/ 301!
+/tools/crowdfunding/ https://crowdfunding.lfx.linuxfoundation.org/ 301!
