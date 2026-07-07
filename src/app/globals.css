@@ -70,3 +70,21 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
 }
+
+/* Accordion auto-advance progress bar (WhatIsLfx). The animation's end event
+   drives the rotation, so disabling it here also stops the auto-advance. */
+@keyframes accordion-progress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.accordion-progress {
+  animation: accordion-progress 5s linear forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion-progress {
+    animation: none;
+    display: none;
+  }
+}

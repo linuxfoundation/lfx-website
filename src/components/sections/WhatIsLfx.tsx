@@ -3,53 +3,22 @@
 
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useCallback } from "react";
 import { Container } from "@/components/ui/Container";
 import { toolDetails } from "@/config/tool-details";
 
-const INTERVAL = 5000;
-
 export function WhatIsLfx() {
   const [openIndex, setOpenIndex] = useState(0);
-  const [progress, setProgress] = useState(0);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const startTimeRef = useRef(Date.now());
+  // Auto-advance is driven entirely by the progress bar's CSS animation:
+  // its animationend event rotates to the next panel, so pausing the
+  // animation (hover/focus) or disabling it (prefers-reduced-motion)
+  // also pauses/stops the rotation — no timers, no re-renders mid-cycle.
+  const [paused, setPaused] = useState(false);
   const activeTool = toolDetails[openIndex] ?? toolDetails[0];
-
-  const resetTimer = useCallback(() => {
-    setProgress(0);
-    startTimeRef.current = Date.now();
-  }, []);
 
   const goToNext = useCallback(() => {
     setOpenIndex((prev) => (prev + 1) % toolDetails.length);
-    resetTimer();
-  }, [resetTimer]);
-
-  const handleClick = useCallback(
-    (index: number) => {
-      setOpenIndex(index);
-      resetTimer();
-    },
-    [resetTimer]
-  );
-
-  // Progress animation + auto-advance
-  useEffect(() => {
-    timerRef.current = setInterval(() => {
-      const elapsed = Date.now() - startTimeRef.current;
-      const pct = Math.min((elapsed / INTERVAL) * 100, 100);
-      setProgress(pct);
-
-      if (elapsed >= INTERVAL) {
-        goToNext();
-      }
-    }, 30);
-
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [openIndex, goToNext]);
+  }, []);
 
   return (
     <section className="bg-neutral-50 py-20">
@@ -70,8 +39,14 @@ export function WhatIsLfx() {
 
         {/* Accordion + Screenshot layout */}
         <div className="mt-14 flex flex-col gap-8 lg:flex-row lg:items-start">
-          {/* Left: Accordion */}
-          <div className="lg:w-1/2 space-y-2">
+          {/* Left: Accordion — pause rotation while the user is engaging */}
+          <div
+            className="lg:w-1/2 space-y-2"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+            onFocus={() => setPaused(true)}
+            onBlur={() => setPaused(false)}
+          >
             {toolDetails.map((tool, index) => {
               const isOpen = openIndex === index;
               return (
@@ -85,12 +60,17 @@ export function WhatIsLfx() {
                 >
                   {/* Progress bar */}
                   {isOpen && (
-                    <div className="absolute top-0 left-0 h-0.5 bg-brand-500 transition-none" style={{ width: `${progress}%` }} />
+                    <div
+                      key={openIndex}
+                      onAnimationEnd={goToNext}
+                      className="accordion-progress absolute top-0 left-0 h-0.5 bg-brand-500"
+                      style={{ animationPlayState: paused ? "paused" : "running" }}
+                    />
                   )}
 
                   {/* Trigger */}
                   <button
-                    onClick={() => handleClick(index)}
+                    onClick={() => setOpenIndex(index)}
                     className="flex w-full items-center gap-4 px-5 py-4 text-left"
                     aria-expanded={isOpen}
                   >
