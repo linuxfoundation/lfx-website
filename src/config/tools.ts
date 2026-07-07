@@ -11,7 +11,7 @@ export interface Tool {
 export const coreTool: Tool = {
   name: "LFX",
   description:
-    "Manage all your LF and open source activites in one place. LFX offers tools for meeting management, events, mailing lists, voting, and more.",
+    "Manage all your LF and open source activities in one place. LFX offers tools for meeting management, events, mailing lists, voting, and more.",
   url: "https://app.lfx.dev/",
   icon: "user",
 };

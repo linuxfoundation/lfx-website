@@ -92,6 +92,7 @@ export function WhatIsLfx() {
                   <button
                     onClick={() => handleClick(index)}
                     className="flex w-full items-center gap-4 px-5 py-4 text-left"
+                    aria-expanded={isOpen}
                   >
                     <div
                       className={`shrink-0 rounded-lg p-2 transition-colors ${

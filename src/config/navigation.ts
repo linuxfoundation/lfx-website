@@ -1,13 +1,6 @@
 // Copyright The Linux Foundation and each contributor to LFX.
 // SPDX-License-Identifier: MIT
 
-export const toolLinks = [
-  { label: "Insights", href: "https://insights.linuxfoundation.org/" },
-  { label: "EasyCLA", href: "https://easycla.lfx.linuxfoundation.org/" },
-  { label: "Mentorship", href: "https://mentorship.lfx.linuxfoundation.org/" },
-  { label: "Crowdfunding", href: "https://crowdfunding.lfx.linuxfoundation.org/" },
-];
-
 export const resourceLinks = [
   {
     label: "Documentation",

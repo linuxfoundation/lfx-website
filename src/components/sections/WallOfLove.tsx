@@ -62,7 +62,8 @@ export function WallOfLove() {
 
         {/* Masonry grid — 3 columns on desktop, 2 on tablet, 1 on mobile */}
         <div className="mt-12 columns-1 gap-4 sm:columns-2 lg:columns-3">
-          {/* Interleave columns for a natural masonry flow */}
+          {/* Reordered so items read left-to-right by row once CSS columns
+              lay them out top-to-bottom */}
           {[col1, col2, col3].flat().map((testimonial) => (
             <TestimonialCard
               key={testimonial.name}

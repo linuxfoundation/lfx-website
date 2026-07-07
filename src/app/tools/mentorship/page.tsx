@@ -6,7 +6,6 @@ import { Redirect } from "@/components/Redirect";
 
 export const metadata: Metadata = {
   robots: "noindex, follow",
-  other: { "http-equiv": "refresh", content: "0;url=https://mentorship.lfx.linuxfoundation.org/" },
 };
 
 export default function MentorshipRedirect() {

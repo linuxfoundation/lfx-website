@@ -6,9 +6,8 @@ import { Redirect } from "@/components/Redirect";
 
 export const metadata: Metadata = {
   robots: "noindex, follow",
-  other: { "http-equiv": "refresh", content: "0;url=/" },
 };
 
 export default function PccRedirect() {
-  return <Redirect to="/" />;
+  return <Redirect to="https://projectadmin.lfx.linuxfoundation.org/" />;
 }

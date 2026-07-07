@@ -26,7 +26,8 @@ export const lfxTools: LfxTool[] = [
   {
     name: "Security",
     description: "Secure your project",
-    link: "https://security.lfx.linuxfoundation.org",
+    // security.lfx.linuxfoundation.org now redirects here; link directly.
+    link: "https://insights.linuxfoundation.org",
   },
   {
     name: "EasyCLA",

@@ -15,6 +15,8 @@ export function MobileMenu() {
         onClick={() => setOpen(!open)}
         className="lg:hidden flex items-center justify-center rounded-full p-2 text-neutral-500 hover:bg-neutral-50 transition-colors"
         aria-label={open ? "Close menu" : "Open menu"}
+        aria-haspopup="menu"
+        aria-expanded={open}
       >
         {open ? (
           <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
