@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function ResourcesRedirect() {
-  return <Redirect to="/" />;
+  return <Redirect to="../" />;
 }
