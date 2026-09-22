@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: MIT
 
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Roboto_Slab } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
@@ -41,6 +42,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${robotoSlab.variable}`}>
       <body className="min-h-screen flex flex-col pt-14 lg:pt-[4.25rem]">
+        {/* Privacy-friendly analytics by Plausible */}
+        <Script
+          async
+          src="https://plausible.io/js/pa-lcKfdbOOXjn-8_neha0yN.js"
+          strategy="afterInteractive"
+        />
+        <Script id="plausible-init" strategy="afterInteractive">
+          {`window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()`}
+        </Script>
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
