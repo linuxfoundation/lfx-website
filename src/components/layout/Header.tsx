@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { ToolsDropdown } from "./ToolsDropdown";
 import { MobileMenu } from "./MobileMenu";
+import { coreTool } from "@/config/tools";
 
 export function Header() {
   return (
@@ -60,7 +61,7 @@ export function Header() {
 
           {/* Log in */}
           <a
-            href="https://sso.linuxfoundation.org/"
+            href={coreTool.url}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden sm:flex items-center gap-2 rounded-full px-3 py-2 text-sm font-medium text-brand-500 transition-colors hover:bg-neutral-50 whitespace-nowrap"
@@ -70,7 +71,7 @@ export function Header() {
 
           {/* Sign up */}
           <a
-            href="https://sso.linuxfoundation.org/"
+            href={coreTool.url}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden sm:flex items-center justify-center rounded-lg bg-brand-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-600 whitespace-nowrap"

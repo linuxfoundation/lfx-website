@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: MIT
 
 import { Container } from "@/components/ui/Container";
+import { coreTool } from "@/config/tools";
 
 export function CtaBanner() {
   return (
@@ -15,7 +16,7 @@ export function CtaBanner() {
         </p>
         <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
           <a
-            href="https://sso.linuxfoundation.org/"
+            href={coreTool.url}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-lg bg-white px-8 py-3 text-sm font-semibold text-brand-600 shadow-md transition-all hover:bg-brand-50"
@@ -23,7 +24,7 @@ export function CtaBanner() {
             Sign up free
           </a>
           <a
-            href="https://sso.linuxfoundation.org/"
+            href={coreTool.url}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-lg border border-white/25 px-8 py-3 text-sm font-semibold text-white transition-all hover:bg-white/10"

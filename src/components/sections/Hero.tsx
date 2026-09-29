@@ -103,7 +103,7 @@ export function Hero() {
               </div>
               <div className="flex shrink-0 items-center gap-3">
                 <a
-                  href="https://sso.linuxfoundation.org/"
+                  href={coreTool.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-lg border border-neutral-200 bg-white px-6 py-2.5 text-sm font-medium text-neutral-700 shadow-xs transition-all hover:border-brand-200 hover:text-brand-500"
@@ -111,7 +111,7 @@ export function Hero() {
                   Log in
                 </a>
                 <a
-                  href="https://sso.linuxfoundation.org/"
+                  href={coreTool.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-lg bg-brand-500 px-6 py-2.5 text-sm font-medium text-white shadow-md shadow-brand-500/25 transition-all hover:bg-brand-600 hover:shadow-lg hover:shadow-brand-500/30"
