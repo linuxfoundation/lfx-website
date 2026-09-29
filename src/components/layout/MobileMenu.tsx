@@ -5,6 +5,7 @@
 
 import { useState } from "react";
 import { lfxTools } from "@/config/lfx-tools";
+import { coreTool } from "@/config/tools";
 
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
@@ -86,7 +87,7 @@ export function MobileMenu() {
             {/* Login */}
             <div className="border-t border-neutral-100 pt-4">
               <a
-                href="https://sso.linuxfoundation.org/"
+                href={coreTool.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-md px-3 py-2.5 text-sm font-medium text-brand-500 transition hover:bg-brand-50"
